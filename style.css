@@ -1,0 +1,221 @@
+html{
+    background: mintcream;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(paramedical.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items:center;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: black;
+    text-decoration: solid;
+    font-size: larger;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: orangered;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.nav img{
+    text-align: left;
+}
+.text-box{
+    width: 90%;
+    color:blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 70px;
+}
+.text-box p{
+    margin: 8px 0 20px;
+    font-size: 17px;
+    color: black;
+}
+.hero{
+    display: inline-block;
+    text-decoration: solid;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero:hover{
+    border: 1px solid orangered;
+    background: orangered;
+    transition: 1s;
+}
+
+/*----Articles----*/
+
+.articles{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.article-col{
+    flex-basis: 31%;
+    background: lightblue;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.article-col:hover{
+    box-shadow: 0 0 20px 0px black;
+}
+
+/*----Schools-----*/
+.Courses{
+    text-align: center;
+}
+
+
+.course-col{
+    flex-basis: 15%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.course-col img{
+    width: 100%;
+    display: block;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: blue;
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: black;
+    font-size: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+.layer:hover h3{
+    top: 49%;
+    opacity: 1;
+}
+
+/*-----Dean-----*/
+.Dean{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100;
+}
+.dean-col{
+    flex-basis: 14%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.dean-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.dean-col p{
+    padding: 0;
+}
+.dean-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/*-----Video-----*/
+
+
+
+
+
+
+/*-----Footer-----*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icons{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    color:black;
+    margin: 0 14px;
+    cursor: pointer;
+    padding: 18px 0;
+}

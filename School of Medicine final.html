@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  background-image: url(headmed.webp) ;
+  background-size: 45vh;
+  height: 25%;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-image: url();
+  width: 100%;
+  padding: 20px;
+}
+.HART1 {
+  background-image: url(MART1.jpeg);
+  width: 87%;
+  padding: 30px;
+}
+.HART2 {
+  background-image: url(mart2.jpg);
+   width:auto;
+   padding: 30px;
+  
+}
+    .HART3{
+  background-image: url(HART2.jpg);
+   width:100%;
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+    }
+  
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    display: inline;
+}
+li a{
+    color: black;
+    padding: 10px;
+    font-size: larger;
+}
+.p1{
+  margin-left: auto;
+  
+}
+.art1{
+    color: red;
+}
+</style>
+</head>
+<body>
+  <button onclick="window.history.back()">Go Back</button>
+  <br>
+<div class="header">
+  <nav>
+    <h2>School of Medicine</h2>
+    <ul>
+        <li><a href="radiography table.html">Timetables</a></li>
+        <li><a href="SOM Committee.html">School Committee</a></li>
+        <li><a href="SOM contactDet.html">Contact Details</a></li>
+    </ul>
+    </nav>
+</div>
+<div class="card">
+    <h2>Interproffessional Education and Collaborative Practice</h2>
+    <h5> May 19, 2024</h5>
+    <div class="HART3" ></div>
+    <p></p>
+    <p class="p1">SMU second-year students from the Radiography healthcare profession reflect on
+       their experiences about the impact of Interprofessional Education and Collaborative Practice (IPECP), 
+       which aims to strengthen interprofessional education and collaboration amongst students through increased 
+       networking.The students share what they've learnt and reflect on it</p>
+   </p>
+    <p class="art1" style="text-align: center;">Seema RM "You pose we expose"<br>
+   Kgololo K "When collaborating communication is key to ensure best paitient outcome"<br>
+   Radzima l "intercollaborate with other health proffesional to assist communities"
+  </p>
+  </div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>School of Medicine Update</h2>
+      <h5>May 14 , 2024</h5>
+      <div class="HART1" style="height:600px;"></div>
+      
+      <p>The SOM council held a meeting with class representatives on April 24, 2024, to address various issues within the school. Updates on these issues include:<br>
+
+        - Dosimeters for Brad 2, 3, and 4 students to detect radiation exposure are being procured, and students will not have to pay for them.<br>
+        - Reduction in clinical sites for Brad students is being addressed through collaboration with private sectors and acquisition of new sites.<br>
+        - Issues with Biophysics in Brad 4 are being mitigated through meetings with the Department.<br>
+        - Medicine 1, 2, and 3 issues, including releasing of Nursing staff and doctors, DH situation, formalin concentration, and fees, are being addressed and escalated to University council and DHET for funding.<br>
+        - Deadlines for resolving outstanding issues are set for May 13, 2024.<br>
+        
+        The SOM council is engaging with departments to address departmental issues and ensure student concerns are heard and resolved.</p>
+    </div>
+    <div class="card">
+      <h2>Passing of Jason Debeila</h2>
+      <h5> May 11, 2024</h5>
+      <div class="HART2" style="height: 800px;" ></div>
+      <p>It is with great sadness to announce the passing of Jason Debeila, a final-year MBCHB student, on May 11, 2024, 
+        at Dr George Mukhari Academic hospital after a long-term illness. He will be remembered for his strong and positive spirit.
+         The School of Medicine extends condolences to the Debeila Family, his classmates, and the SMU student community. Memorial 
+         service and funeral arrangements will be communicated soon. May he rest in peace.
+         "The Lord is close to the brokenhearted and saves those who are crushed in spirit" (Psalm 34:18).</p>
+      </div>
+    
+ 
+    
+  
+
+</body>
+</html>
+
+ 

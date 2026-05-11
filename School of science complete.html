@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+  background-image: url(sstbackground1.jpeg) ;
+  height: 25%;
+  background-size: contain;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-image: url();
+  width: 100%;
+  padding: 20px;
+}
+.sstarticle1 {
+  background-image: url(sstarticle1.jpg);
+  width: 87%;
+  padding: 30px;
+}
+.sstarticle2 {
+  background-image: url(sstarticle2.jpg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:100% ;
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  
+}
+.sstarticle3{
+  background-image: url(ai.jpg);
+  width: 100%;
+  padding: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+li a{
+  color: black;
+}
+li a:hover{
+  background-color: transparent;
+}
+li{
+    display: inline;
+    padding: 8px;
+    
+}
+.p1{
+  margin-left: auto;
+  
+}
+</style>
+</head>
+<body>
+  <button onclick="window.history.back()">Go Back</button>
+  <br>
+
+<div class="header">
+  <nav>
+    <h2>School of Science & Technology</h2>
+    <ul>
+        <li><a href="BSC timetable.html">Timetable</a></li>
+        <li><a href="SST Commitee.html">School Committee</a></li>
+        <li><a href="SST Details.html">Contact Details</a></li>
+    </ul>
+    </nav>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>UPDATE ON NSB AIRCONDITIONING AND MAINTANANCE</h2>
+      <h5>Title description, Dec 23, 2024</h5>
+      <div class="sstarticle1" style="height:600px;"></div>
+      <p>The SST Council has received several and various complaints from students in the school about the issue of air-conditions at the NSB especially in the labs, students had even resorted to bringing in their own smaller-nyana fans just to ensure they get some air</p>
+      <p>The SST council as the custodian of students took the matter seriously and escalated the matter to chief operating officer. We are pleased to inform you that the university has aquired air-conditioners and installations are underway.The council remains dedicated to assisting students of school</p>
+    </div>
+    <div class="card">
+      <h2>From a delivery boy to a PhD graduate</h2>
+      <h5>Dr Abongile Bele's story of perseverance, Sep 2, 2024</h5>
+      <div class="sstarticle2" ></div>
+      <p>Dr. Abongile Bele, born on April 14, 1996</p>
+      <p class="p1">Eastern Cape, overcame a challenging childhood to achieve a PhD in Physics at 28. Despite poverty and tragedy, he excelled in studies, working part-time from age 13 to support his family.His research on mixed-phase nanophosphor materials has led to groundbreaking findings,<br> and he is now a lecturer and mentor, inspiring others to pursue STEM fields. Dr. Bele's story is a testament to determination and hard work,inspiring young people from disadvantaged backgrounds to strive for greatness.</p>
+    </div>
+    <div class="card">
+        <h2>Students enhance their application of Mathematics in IT and 4IR</h2>
+        <h5> May, 2024</h5>
+        <div class="sstarticle3" style="height:400px;"></div>
+        <p>A workshop on computer science and technology was </p>
+        <p>held for postgraduate students, covering applications of mathematics in IT and the Fourth Industrial Revolution. Experts shared knowledge on AI, game development, and programming, with hands-on activities. Students gained a foundational understanding of computer science and explored career paths, engaging with potential employers and identifying real-life math applications. </p>
+      </div>
+      
+ 
+    
+  
+
+</body>
+</html>
+
+ 

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background-image: url(headhealth.jpeg) ;
+  background-size: 45vh;
+  height: 25%;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-image: url();
+  width: 100%;
+  padding: 20px;
+}
+.HART1 {
+  background-image: url(HART1.webp);
+  width: 87%;
+  padding: 30px;
+}
+.HART2 {
+  background-image: url(HART2.jpg);
+   width:100%;
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  
+}
+.HART3{
+  background-image: url(HART3.webp);
+  width: 100%;
+  padding: 30px;
+  background-repeat: no-repeat;
+}
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    display: inline;
+}
+li a{
+    color: white;
+    padding: 10px;
+    font-size: larger;
+}
+.p1{
+  margin-left: auto;
+  
+}
+.art1{
+    color: red;
+}
+</style>
+</head>
+<body>
+  <button onclick="window.history.back()">Go Back</button>
+  <br>
+<div class="header">
+  <nav>
+    <h2>School of Health Care Sciences</h2>
+    <ul>
+        <li><a href="nursing table.html">Timetable</a></li>
+        <li><a href="SOM Committee.html">School Committee</a></li>
+        <li><a href="Physio Contacts.html"   >Contact Details</a></li>
+    </ul>
+    </nav>
+</div>
+     
+    <div class="card">
+        <h2>Nursing Science Department & Fundraising Run</h2>
+        <h5> April 17, 2024</h5>
+        <div class="HART3" style="height:400px;"></div>
+        <p></p>
+        <p>Nursing students organized a successful fundraiser, where attendees were required 
+          to pay a R70 entrance fee and bring non-perishable food items. The event saw a great turnout,
+           with a significant amount of food and funds collected. The proceeds will go towards supporting
+            struggling students, providing them with much-needed assistance to continue their studies. 
+            This initiative not only demonstrated the nursing students' commitment to helping others
+             but also showcased their ability to make a positive impact in their community.</p>
+      </div>
+
+  <br>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>The Department of Physiotherapy motivates FTENs during Prize-Giving eremony</h2>
+      <h5>March , 2024</h5>
+      <div class="HART1" style="height:600px;"></div>
+      <p>The Physiotherapy Department welcomed First-Time Entering Students (FTENs) </p>
+      <p> with a prize-giving ceremony, emphasizing the importance of conduct and delivering results.
+         Top-performing students were awarded, and academic and support staff were introduced. The ceremony concluded 
+        with FTENs receiving souvenirs for choosing to study physiotherapy.</p>
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+ 

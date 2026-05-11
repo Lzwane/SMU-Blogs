@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background-image: url(DART1.webp) ;
+  background-size: 45vh;
+  height: 25%;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-image: url();
+  width: 100%;
+  padding: 20px;
+}
+.HART1 {
+  background-image: url(Dart2.webp);
+  width: 87%;
+  padding: 30px;
+}
+.HART2 {
+  background-image: url(dart3.jpeg);
+   width:100%;
+  height: 100vh;
+  padding: 30px;
+  background-repeat: no-repeat;
+}
+
+
+.HART3{
+  background-image: url(dart4.webp);
+  width: 100%;
+  padding: 30px;
+  background-repeat: no-repeat;
+}
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    display: inline;
+}
+li a{
+    color: white;
+    padding: 10px;
+    font-size: larger;
+}
+.p1{
+  margin-left: auto;
+  
+}
+.art1{
+    color: red;
+    
+}
+</style>
+</head>
+<body>
+  <button onclick="window.history.back()">Go Back</button>
+  <br>
+<div class="header">
+  <nav>
+    <h2>School of Dentistry</h2>
+    <ul>
+        <li><a href="BDT and BDS Timetable.html">Timetable</a></li>
+        <li><a href="BDS Committee.html">School Committee</a></li>
+        <li><a href="Diet Contacts.html">Contact Details</a> </li>
+    </ul>
+    </nav>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Interschool Tournament Championship</h2>
+      <h5>May 22 , 2024</h5>
+      <div class="HART1" style="height:600px;"></div>
+      <p>The interschool tournament championship was highly anticipated event that brought together students
+        from the different school facalauties to compete in a soccer tournament.
+        After a day of fierce competition the Dental FC were crowned as Champions for the tournament
+      </p>
+      <p> Big ups to Dental FC for winning. KEEP IT UP BOYS!</p>
+    </div>
+    <div class="card">
+      <h2>World Oral Day</h2>
+      <h5> March 20, 2024</h5>
+      <div class="HART2" style="height: 400px;" ></div>
+      <p>The School of Dentistry at Sefako Makgatho Health Science
+        s University will celebrate World Oral Health Day on March 20, 
+        2024, with the theme "A Happy mouth is A Happy body". The purpose is to raise
+         awareness that prioritizing oral health leads to better overall health, and to
+          educate people on preventing oral diseases and maintaining good oral health. Poor oral health is 
+          linked to serious medical conditions like pneumonia, heart disease, and pregnancy complications. To improve oral 
+          health, the school encourages everyone to follow simple rules: take care of your mouth daily, eat a healthy diet,
+           avoid tobacco, brush and clean your teeth regularly, and visit a registered oral health practitioner twice a year.
+            By doing so, oral diseases like dental caries,
+         periodontal diseases, and tooth loss can be prevented, ensuring a beautiful smile and overall good health.</p>
+      <p></p>
+      </div>
+      <div class="card">
+        <h2>Memorandum To The School of Dentistry</h2>
+        <h5>May 15 , 2024</h5>
+        <div class="HART3" style="height:300px;"></div>
+        <p>
+          Here is a shortened version of the text:
+
+          The School of Dentistry is addressing the impact of a recent gas leak/disruption in the dental laboratories and clinical areas.
+           After consultation, it was determined that the gas line is irreparable and unsafe. To minimize disruption to the academic year, 
+           the Academic Planning Committee has implemented the following measures:<br></br>
+          
+          - Adjusted academic timetable for affected groups (BDS 2 & 3) to continue practical training at an off-site facility<br>
+          - Transportation will be provided and a travel roster will be drawn up<br>
+          - Interim arrangements for BDS 4 & 5 to use shareable handpieces<br>
+          - Timetable adjustments will be communicated through HODs, DSC, and Class representatives<br>
+          - Students should continue with scheduled academic sessions<br>
+          
+          The School is working to find a long-term solution to replace the damaged gas line.
+        </p>
+        <p></p>
+      </div>
+     </body>
+</html>
+
+ 

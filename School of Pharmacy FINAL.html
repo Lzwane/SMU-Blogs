@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 23px;
+  color: black;
+  text-align: center;
+  background-image: url(headpharm.jpg) ;
+  background-size: 45vh;
+  height: 25%;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-image: url();
+  width: 100%;
+  padding: 20px;
+}
+.PART1 {
+  background-image: url(PART1.webp);
+  width: 87%;
+  padding: 30px;
+}
+.HART2 {
+  background-image: url(HART2.jpg);
+   width:100%;
+  height: 100vh;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  
+}
+.HART3{
+  background-image: url(HART3.webp);
+  width: 100%;
+  padding: 30px;
+  background-repeat: no-repeat;
+}
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+li{
+    display: inline;
+}
+li a{
+    color: black;
+    padding: 10px;
+    font-size: larger;
+}
+.p1{
+  margin-left: auto;
+  
+}
+.art1{
+    color: red;
+}
+</style>
+</head>
+<body>
+  <button onclick="window.history.back()">Go Back</button>
+  <br>
+
+<div class="header">
+  <nav>
+    <h2>School of Pharmacy</h2>
+    <ul>
+        <li><a href="Bpharm table.html">Timetable</a></li>
+        <li><a href="PHARMCY COMMITEE.HTML">School Committee</a></li>
+        <li><a href="Pharm Contacts.html"> Contact Details</a></li>
+    </ul>
+    </nav>
+</div>
+ <div class="row">
+          <div class="leftcolumn">
+            <div class="card">
+              <h2>Pharmacy Laboratory Accident</h2>
+              <h5>Feb 15 , 2024</h5>
+              <div class="PART1" style="height:600px;"></div>
+              <p>A laboratory incident  occurred the School Of Pharmacy New Lab. 
+                The incident involved a chemical exposure that affected pharmacy third year students. 
+                During a scheduled laboratory session in the Pharmaceutical 
+                Lab of SOP, students were conducting experiments involving a certain chemical.
+                Unfortunately, later after the practical session, an unexpected incident occurred, 
+                resulting in students experiencing certain reactions to the chemical, specifically 
+                affecting their eyes leading to their immediate need for medical care. </p>
+              <p>We are pleased to inform you that
+                 most students have shown significant improvement and have fully recovered. 
+                This is mainly because we ensured that all affected students
+                 received the proper medical attention befitting of their condition.
+                 We would like to first thank everyone who shared their heartfelt messages
+                  to the BPharm 3s and wished them well during this difficult period. The support that was
+                  demonstrated by the SMU community and other external
+                   members was truly overwhelming and did not go unnoticed.
+                </p>
+            </div>
+           
