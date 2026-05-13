@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMU Freshers Portal | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <div class="logo-box">
+                <a href="https://www.smu.ac.za/">
+                    <img src="images/Logo.png" alt="SMU Logo" class="main-logo">
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="newsflash.html">Newsflash</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="sports.html">Sports</a></li> </ul>
+            </div>
+        </nav>
+
+        <div class="text-box">
+            <div class="hero-content">
+                <h1>Navigate SMU with Confidence</h1>
+                <p>Your ultimate companion for <strong>academic success</strong> and <strong>social adjustment</strong>. 
+                We've categorized the chaos so you can focus on your journey.</p>
+                <div class="hero-btns">
+                    <a href="#essentials" class="hero">Explore Portal</a>
+                    <a href="https://www.smu.ac.za/" class="hero-outline" target="_blank">Official Website</a>
+                </div>
+            </div>
+        </div>
+
+</section>
+
+
+
+
+
+
+<section class="fresher-support-grid">
+    <div class="grid-container">
+        
+        <div class="fresher-card syked-theme">
+            <div class="card-inner">
+                <span class="category-tag">Wellness</span>
+                <h2>Mind Matters</h2>
+                <p>Don't carry the weight alone. Access <strong>free professional sessions</strong> via Syked or reach out to our 24/7 helpline.</p>
+                <div class="card-actions">
+                    <a href="https://www.syked.co.za/auth/sign-up" target="_blank" class="btn-primary">Book Session</a>
+                    <a href="tel:0107463755" class="btn-outline">Call 010 746 3755</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="fresher-card cutl-theme">
+            <div class="card-inner">
+                <span class="category-tag">Academic</span>
+                <h2>CUTL Support</h2>
+                <p>Improve your academic quality. Request an expert <strong>Tutor</strong> or a <strong>Mentor</strong> to guide your student life.</p>
+                <div class="card-actions">
+                    <button onclick="openForm()" class="btn-primary">Request Support</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="fresher-card docs-theme">
+            <div class="card-inner">
+                <span class="category-tag">Resources</span>
+                <h2>Campus Roadmap</h2>
+                <p>Download the <strong>Academic Calendar</strong> or the <strong>Orientation Book</strong> for the campus map and guides.</p>
+                <div class="card-actions">
+                    <button onclick="openResourceModal()" class="btn-primary">View Documents</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="requestForm" class="form-overlay">
+    <div class="form-content">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        <h3>Academic Support Request</h3>
+        <p>Complete the form to generate your WhatsApp message.</p>
+        <form id="supportForm">
+            <input type="text" id="studentName" placeholder="Full Name" required>
+            <input type="text" id="studentNumber" placeholder="Student Number" required>
+            
+            <select id="studentSchool" required>
+                <option value="" disabled selected>Select your School</option>
+                <option value="Science and Technology">School of Science & Technology</option>
+                <option value="Medicine">School of Medicine</option>
+                <option value="Pharmacy">School of Pharmacy</option>
+                <option value="Oral Health Sciences">School of Dentistry</option>
+                <option value="Health Care Sciences">School of Health Care Sciences</option>
+            </select>
+
+            <select id="requestType" required>
+                <option value="" disabled selected>What do you need?</option>
+                <option value="Mentor">Request a Mentor (Student Life)</option>
+                <option value="Tutor">Request a Tutor (Studies)</option>
+            </select>
+            
+            <button type="submit" class="submit-btn">Continue to WhatsApp</button>
+        </form>
+    </div>
+</div>
+
+<div id="resourceModal" class="form-overlay">
+    <div class="form-content doc-modal">
+        <span class="close-btn" onclick="closeResourceModal()">&times;</span>
+        <h3>Campus Roadmap</h3>
+        <p>Select a document to download.</p>
+        <div class="doc-options">
+            <a href="docs/acadmic calendar.pdf" download class="doc-item">
+                <span class="doc-icon">📅</span>
+                <div class="doc-info">
+                    <strong>Academic Calendar</strong>
+                    <small>Official Year Schedule</small>
+                </div>
+            </a>
+            <a href="docs/Orientation book.pdf" download class="doc-item">
+                <span class="doc-icon">🗺️</span>
+                <div class="doc-info">
+                    <strong>Orientation Book</strong>
+                    <small>Campus Map & Guide</small>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<section class="schools-section">
+    <h1>Our Academic Schools</h1>
+    <p>Sefako Makgatho Health Sciences University is composed of specialized fields led by distinguished educators.</p>
+
+    <div class="schools-grid">
+        <div class="school-card">
+            <div class="school-image">
+                <img src="https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/02/the-digitalisation-of-science-technology-and-innovation_fe2855a5/b9e4a2c0-en.jpg" alt="Science and Technology">
+            </div>
+            <div class="school-info">
+                <h3>School of Science & Technology</h3>
+                <p class="dean-name"><strong>Dean:</strong> Prof. Molatlhegi Nelson Sithebe</p>
+                <a href="School of science complete.html" class="school-link">Explore School</a>
+            </div>
+        </div>
+
+        <div class="school-card">
+            <div class="school-image">
+                <img src="https://cdn.sanity.io/images/0vv8moc6/biopharn/64e01bf1f7dbd9099e249e9c3247fdbb9a46b4b1-1280x720.jpg" alt="Pharmacy">
+            </div>
+            <div class="school-info">
+                <h3>School of Pharmacy</h3>
+                <p class="dean-name"><strong>Dean:</strong> Prof. Yahaya Gana Sambo</p>
+                <a href="School of Pharmacy FINAL.html" class="school-link">Explore School</a>
+            </div>
+        </div>
+
+        <div class="school-card">
+            <div class="school-image">
+                <img src="https://humanitarianu.org/wp-content/uploads/2021/04/emerency-medicine.jpeg" alt="Medicine">
+            </div>
+            <div class="school-info">
+                <h3>School of Medicine</h3>
+                <p class="dean-name"><strong>Dean:</strong> Prof. Thanyani Mariba</p>
+                <a href="School of Medicine final.html" class="school-link">Explore School</a>
+            </div>
+        </div>
+
+        <div class="school-card">
+            <div class="school-image">
+                <img src="https://www.edynamiclearning.com/wp-content/uploads/2019/04/HealthScienceII.jpg" alt="Health Care Science">
+            </div>
+            <div class="school-info">
+                <h3>School of Health Care Sciences</h3>
+                <p class="dean-name"><strong>Dean:</strong> Prof. Maseumo Maleatje</p>
+                <a href="School of Health Care Sciences FINAL.html" class="school-link">Explore School</a>
+            </div>
+        </div>
+
+        <div class="school-card">
+            <div class="school-image">
+                <img src="https://doctorlaurenbecker.com/tpn/gen/GettyImages-1016764012.jpg" alt="Dentistry">
+            </div>
+            <div class="school-info">
+                <h3>School of Dentistry</h3>
+                <p class="dean-name"><strong>Dean:</strong> Prof. Sibusiso Stephen Shangase</p>
+                <a href="School of Dental final.html" class="school-link">Explore School</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="campus-pulse">
+    <div class="pulse-container">
+        <div class="pulse-header">
+            <span class="category-tag">Your Journey</span>
+            <h1>The SMU Pulse</h1>
+            <p>From the first day of orientation to the final walk across the stage—your future starts here.</p>
+        </div>
+
+        <div class="timeline-vibe">
+            <div class="vibe-card">
+                <div class="vibe-number">01</div>
+                <div class="vibe-content">
+                    <h3>The Welcome Phase</h3>
+                    <p>Orientation sets a confident tone for first-time students. It's where you find your feet, meet your mentors, and begin building the relationships that will support you throughout your degree.</p>
+                </div>
+                <div class="vibe-img">
+                    <img src="https://www.smu.ac.za/wp-content/uploads/2026/02/SMU-orientation-sets-a-confident-tone-for-first-time-entering-students-3-teaser.jpg" alt="SMU Orientation">
+                </div>
+            </div>
+
+            <div class="vibe-card reverse">
+                <div class="vibe-number">02</div>
+                <div class="vibe-content">
+                    <h3>Academic Excellence</h3>
+                    <p>Experience hands-on training in our state-of-the-art labs and lecture halls. This is where theory meets practice, preparing you for a meaningful career in the health and mathematical sciences.</p>
+                </div>
+                <div class="vibe-img">
+                    <img src="https://www.smu.ac.za/wp-content/uploads/2021/04/IMG_3229-1080x675.jpg" alt="SMU Laboratories">
+                </div>
+            </div>
+
+            <div class="vibe-card">
+                <div class="vibe-number">03</div>
+                <div class="vibe-content">
+                    <h3>The Final Milestone</h3>
+                    <p>Graduation is the culmination of your hard work. Join the ranks of SMU alumni who are empowered to make a national impact and lead transformation in their respective fields.</p>
+                </div>
+                <div class="vibe-img">
+                    <img src="https://www.smu.ac.za/wp-content/uploads/2025/09/SMU-Graduation-Sept-34.jpg" alt="SMU Graduation Ceremony">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-row">
+            <div class="footer-col brand-info">
+                <img src="images/Logo.png" alt="SMU Logo">
+                <p>Inspired by the legacy of Sefako Makgatho. We are committed to providing an inclusive, transformed, and democratic environment for the next generation of health science leaders.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="newsflash.html">Newsflash</a></li>
+                    <li><a href="contacts.html">Support Directory</a></li>
+                    <li><a href="campus-life.html">Campus Life</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Molotlegi Street, Ga-Rankuwa<br>Pretoria, Gauteng</p>
+                <p><strong>Tel:</strong> 012 521 5759</p>
+                <p><strong>Email:</strong> info@smu.ac.za</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Our Journey</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/"><img src="images/Facebook.png" alt="FB"></a>
+                    <a href="https://www.instagram.com/"><img src="images/Instagram.png" alt="IG"></a>
+                    <a href="https://www.twitter.com/"><img src="images/Twitter.png" alt="X"></a>
+                    <a href="https://www.tiktok.com/"><img src="images/TikTok.png" alt="TK"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sefako Makgatho Health Sciences University | Designed for Elite Freshers</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

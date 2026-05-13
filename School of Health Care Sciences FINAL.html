@@ -1,163 +1,212 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHS | School of Healthcare Sciences</title>
+    <style>
+        /* --- CSS STYLING (MATCHING THE ELITE FRESHER THEME) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-/* Add a gray background color with some padding */
-body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
-}
+        body {
+            background-color: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  background-image: url(headhealth.jpeg) ;
-  background-size: 45vh;
-  height: 25%;
-}
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 100%;
-}
+        /* Hero Section */
+        .shs-header {
+            min-height: 50vh;
+            background-image: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.7)), 
+                              url('https://www.edynamiclearning.com/wp-content/uploads/2019/04/HealthScienceII.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-}
+        .category-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #00d2ff; /* Healthcare Blue */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
 
-/* Fake image */
-.fakeimg {
-  background-image: url();
-  width: 100%;
-  padding: 20px;
-}
-.HART1 {
-  background-image: url(HART1.webp);
-  width: 87%;
-  padding: 30px;
-}
-.HART2 {
-  background-image: url(HART2.jpg);
-   width:100%;
-  height: 100vh;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  
-}
-.HART3{
-  background-image: url(HART3.webp);
-  width: 100%;
-  padding: 30px;
-  background-repeat: no-repeat;
-}
-/* Add a card effect for articles */
-.card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
-}
+        .back-nav { position: absolute; top: 30px; left: 5%; }
+        .btn-back {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 8px 18px;
+            font-size: 13px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; color: #003366; }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
+        /* Main Content Grid */
+        .content-section { width: 85%; margin: 80px auto; text-align: center; }
+        .section-title h2 { 
+            font-size: 32px; 
+            border-bottom: 4px solid #00d2ff; 
+            display: inline-block; 
+            padding-bottom: 10px; 
+            margin-bottom: 40px; 
+        }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    
-}
-li{
-    display: inline;
-}
-li a{
-    color: white;
-    padding: 10px;
-    font-size: larger;
-}
-.p1{
-  margin-left: auto;
-  
-}
-.art1{
-    color: red;
-}
-</style>
+        .shs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .shs-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            border-top: 4px solid #003366;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .shs-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+        }
+
+        .btn-action { 
+            display: inline-block; 
+            margin-top: 20px; 
+            color: #00d2ff; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+        }
+
+        /* Modal / Pop-up Styling */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            text-align: left;
+        }
+
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: #999; }
+        .dept-list { list-style: none; margin-top: 20px; }
+        .dept-list li { padding: 12px 0; border-bottom: 1px solid #eee; color: #555; }
+        .dept-list li:last-child { border-bottom: none; }
+
+        /* Dean Profile Footer */
+        .leadership-box { padding: 60px 0; text-align: center; border-top: 1px solid #eee; }
+        .dean-profile h4 { color: #003366; font-size: 20px; }
+
+    </style>
 </head>
 <body>
-  <button onclick="window.history.back()">Go Back</button>
-  <br>
-<div class="header">
-  <nav>
-    <h2>School of Health Care Sciences</h2>
-    <ul>
-        <li><a href="nursing table.html">Timetable</a></li>
-        <li><a href="SOM Committee.html">School Committee</a></li>
-        <li><a href="Physio Contacts.html"   >Contact Details</a></li>
-    </ul>
-    </nav>
-</div>
-     
-    <div class="card">
-        <h2>Nursing Science Department & Fundraising Run</h2>
-        <h5> April 17, 2024</h5>
-        <div class="HART3" style="height:400px;"></div>
-        <p></p>
-        <p>Nursing students organized a successful fundraiser, where attendees were required 
-          to pay a R70 entrance fee and bring non-perishable food items. The event saw a great turnout,
-           with a significant amount of food and funds collected. The proceeds will go towards supporting
-            struggling students, providing them with much-needed assistance to continue their studies. 
-            This initiative not only demonstrated the nursing students' commitment to helping others
-             but also showcased their ability to make a positive impact in their community.</p>
-      </div>
 
-  <br>
+    <section class="shs-header">
+        <div class="back-nav"><a href="index.html" class="btn-back">← Back to Portal</a></div>
+        <span class="category-tag">Elite Fresher Hub</span>
+        <h1>Healthcare Sciences</h1>
+    </section>
 
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h2>The Department of Physiotherapy motivates FTENs during Prize-Giving eremony</h2>
-      <h5>March , 2024</h5>
-      <div class="HART1" style="height:600px;"></div>
-      <p>The Physiotherapy Department welcomed First-Time Entering Students (FTENs) </p>
-      <p> with a prize-giving ceremony, emphasizing the importance of conduct and delivering results.
-         Top-performing students were awarded, and academic and support staff were introduced. The ceremony concluded 
-        with FTENs receiving souvenirs for choosing to study physiotherapy.</p>
+    <section class="content-section">
+        <div class="section-title"><h2>SHS Navigator</h2></div>
+        <div class="shs-grid">
+            
+            <div class="shs-card" onclick="toggleModal('deptModal')">
+                <h3>Academic Departments</h3>
+                <p>Explore our specialized clinical departments dedicated to rehabilitative and primary health care.</p>
+                <span class="btn-action">View Departments →</span>
+            </div>
+
+            <div class="shs-card" onclick="toggleModal('leadModal')">
+                <h3>Student Leadership</h3>
+                <p>Reach out to the School Chairperson for student representation and academic support.</p>
+                <span class="btn-action">View Chairperson →</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="leadership-box">
+        <div class="dean-profile">
+            <h4>Prof. Maseumo Maleatje</h4>
+            <p style="color: #888; font-size: 13px;">Executive Dean: School of Healthcare Sciences</p>
+        </div>
+    </section>
+
+    <div id="deptModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal('deptModal')">&times;</span>
+            <h3 style="color:#003366; border-bottom: 2px solid #00d2ff; display: inline-block;">SHS Departments</h3>
+            <ul class="dept-list">
+                <li>Occupational Therapy (OT)</li>
+                <li>Speech-Language Pathology</li>
+                <li>Audiology</li>
+                <li>Nursing Science</li>
+                <li>Physiotherapy</li>
+                <li>Human Nutrition & Dietetics</li>
+            </ul>
+        </div>
     </div>
-</div>
-</div>
+
+    <div id="leadModal" class="modal-overlay">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close-modal" onclick="toggleModal('leadModal')">&times;</span>
+            <div style="font-size: 40px; margin-bottom: 10px;">🏥</div>
+            <h3 style="color:#111; margin-bottom: 5px;">Franco Baloyi</h3>
+            <p style="color:#00d2ff; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+                Chairperson: School of Healthcare Sciences
+            </p>
+            <p style="margin-top: 20px; color: #666; font-size: 14px; line-height: 1.6;">
+                Leading with excellence to ensure student welfare and academic growth across all rehabilitative disciplines.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "block";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === "modal-overlay") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 </html>
-
- 

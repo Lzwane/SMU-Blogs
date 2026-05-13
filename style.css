@@ -1,221 +1,706 @@
 html{
     background: mintcream;
 }
-.header{
+
+.header {
+    padding-top: 80px; /* Prevents content from being hidden under nav */
     min-height: 100vh;
     width: 100%;
-    background-image: url(paramedical.webp);
-    background-position: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/paramedical.webp);
     background-size: cover;
+    background-position: center;
     position: relative;
 }
 
 
-nav{
+nav {
     display: flex;
-    padding: 2% 6%;
+    padding: 10px 6%;
     justify-content: space-between;
-    align-items:center;
-}
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-.nav-links ul li a{
-    color: black;
-    text-decoration: solid;
-    font-size: larger;
-}
-.nav-links ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: orangered;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-.nav-links ul li:hover::after{
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95); /* Clean white background */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: fixed; /* Keeps nav visible while scrolling */
     width: 100%;
-}
-.nav img{
-    text-align: left;
-}
-.text-box{
-    width: 90%;
-    color:blue;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-}
-.text-box h1{
-    font-size: 70px;
-}
-.text-box p{
-    margin: 8px 0 20px;
-    font-size: 17px;
-    color: black;
-}
-.hero{
-    display: inline-block;
-    text-decoration: solid;
-    color: black;
-    border: 1px solid black;
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-}
-.hero:hover{
-    border: 1px solid orangered;
-    background: orangered;
-    transition: 1s;
-}
-
-/*----Articles----*/
-
-.articles{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-}
-h1{
-    font-size: 36px;
-    font-weight: 600;
-}
-
-p{
-    color: black;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-}
-
-.row{
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-between;
-}
-.article-col{
-    flex-basis: 31%;
-    background: lightblue;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 20px 12px;
+    top: 0;
+    z-index: 1000;
     box-sizing: border-box;
 }
-h3{
-    text-align: center;
-    font-weight: 600;
-    margin: 10px 0;
-}
-.article-col:hover{
-    box-shadow: 0 0 20px 0px black;
-}
 
-/*----Schools-----*/
-.Courses{
-    text-align: center;
-}
-
-
-.course-col{
-    flex-basis: 15%;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
-}
-.course-col img{
-    width: 100%;
+.logo-box .main-logo {
+    height: 70px; /* Fixed height to keep it consistent */
+    width: auto;
     display: block;
+    transition: transform 0.3s ease;
 }
 
-.layer{
-    background: transparent;
-    height: 100%;
-    width:100%;
+.logo-box .main-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Nav Links Layout */
+.nav-links ul {
+    margin: 0;
+    padding: 0;
+} 
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 5px;
+    position: relative;
+    transition: 0.4s;
+    border-radius: 25px; /* Pill shape */
+}
+
+.nav-links ul li a {
+    color: #003366; /* SMU Dark Blue */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    z-index: 2;
+    position: relative;
+    transition: 0.4s;
+}
+
+.nav-links ul li::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff4500; /* SMU Orangered */
+    border-radius: 25px;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.nav-links ul li:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-links ul li:hover a {
+    color: #fff; /* Changes text to white when the orange pill appears */
+}
+
+.logo-box .main-logo:hover {
+    transform: translateY(-3px) scale(1.05);
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2));
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff4500; /* Orangered accent */
+    display: block;
+    margin: auto;
     transition: 0.5s;
 }
-.layer:hover{
-    background: blue;
-}
-.layer h3{
+
+.nav-links ul li:hover::after {
     width: 100%;
-    font-weight: 500;
-    color: black;
-    font-size: 16px;
-    left: 50%;
-    transform: translateX(-50%);
+}
+
+
+.nav img{
+    text-align: left;
+}
+
+
+/* --- Modern Hero Section --- */
+.text-box {
+    width: 90%;
+    max-width: 800px;
     position: absolute;
-}
-.layer:hover h3{
-    top: 49%;
-    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px;
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-/*-----Dean-----*/
-.Dean{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100;
+.text-box h1 {
+    font-size: 60px;
+    color: #fff; /* White looks better on glass */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
 }
-.dean-col{
-    flex-basis: 14%;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    text-align: left;
+
+
+.text-box p {
+    margin: 10px 0 30px;
+    font-size: 18px;
+    color: #f0f0f0;
+    line-height: 1.6;
 }
-.dean-col img{
-    width: 100%;
-    border-radius: 10px;
+
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
-.dean-col p{
-    padding: 0;
+
+.hero {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #ff4500; /* Orangered */
+    padding: 15px 35px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.4s ease;
+    border: 2px solid #ff4500;
 }
-.dean-col h3{
-    margin-top: 16px;
+
+.hero:hover {
+    background: transparent;
+    color: #ff4500;
+    transform: translateY(-3px);
+}
+
+/* Outline Button */
+.hero-outline {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 15px 35px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.4s ease;
+}
+
+.hero-outline:hover {
+    background: #fff;
+    color: #003366;
+    transform: translateY(-3px);
+}
+
+
+
+
+
+
+
+/* --- Overhauled Support Grid --- */
+.fresher-support-grid {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.fresher-card {
+    background: #fff;
+    border-radius: 2px; /* Sharper, modern edges */
+    padding: 40px;
+    position: relative;
+    border: 1px solid #eee;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fresher-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: transparent;
+}
+
+/* Theme Accents */
+.syked-theme { border-top: 4px solid #2ecc71; }
+.cutl-theme { border-top: 4px solid #ff4500; }
+.docs-theme { border-top: 4px solid #003366; }
+
+.category-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    display: block;
     margin-bottom: 15px;
+}
+
+.fresher-card h2 {
+    font-size: 28px;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.fresher-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Cleaner Buttons */
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: #111; /* Dark minimalist look */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.syked-theme .btn-primary { background: #2ecc71; }
+.cutl-theme .btn-primary { background: #ff4500; }
+.docs-theme .btn-primary { background: #003366; }
+
+.btn-primary:hover {
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.btn-outline {
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: #f9f9f9;
+    border-color: #111;
+}
+
+/* Modal Pop-up Styling Polish */
+.form-content {
+    border-radius: 0px; /* Matching the card aesthetic */
+    padding: 50px;
+}
+
+.doc-item {
+    border-radius: 0px;
+    border: 1px solid #eee;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+/* Modal Overlays */
+.form-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+}
+
+.form-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+}
+
+/* Inputs and Selects */
+.form-content input, .form-content select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    background: #25D366; /* WhatsApp Green */
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Doc Modal Styling */
+.doc-options { margin-top: 20px; }
+.doc-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+.doc-item:hover { background: #fff0eb; border-color: #ff4500; }
+.doc-icon { font-size: 24px; margin-right: 15px; }
+.doc-info { text-align: left; }
+.doc-info strong { display: block; color: #111; }
+.doc-info small { color: #888; }
+
+
+
+/* --- Schools Section Styling --- */
+.schools-section {
+    width: 85%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.schools-section h1 {
+    font-size: 36px;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.schools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.school-card {
+    flex-basis: calc(33.333% - 25px); /* 3 cards per row */
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px; /* Minimalist sharp edges */
+    overflow: hidden;
+    transition: 0.4s;
     text-align: left;
 }
 
-/*-----Video-----*/
-
-
-
-
-
-
-/*-----Footer-----*/
-.footer{
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
+.school-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.footer h4{
+.school-image img {
+    width: 100%;
+    height: 200px; /* Uniform height for all images */
+    object-fit: cover; /* Crops image to fit without stretching */
+    display: block;
+}
+
+.school-info {
+    padding: 25px;
+}
+
+.school-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #003366; /* SMU Blue */
+}
+
+.dean-name {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.school-link {
+    text-decoration: none;
+    color: #ff4500; /* SMU Orangered */
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.school-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media(max-width: 900px) {
+    .school-card { flex-basis: calc(50% - 25px); }
+}
+@media(max-width: 600px) {
+    .school-card { flex-basis: 100%; }
+}
+
+
+
+
+
+
+/* --- The SMU Pulse Styling --- */
+.campus-pulse {
+    padding: 100px 0;
+    background: #fafafa;
+}
+
+.pulse-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pulse-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.timeline-vibe {
+    display: flex;
+    flex-direction: column;
+    gap: 120px; /* Space between steps */
+}
+
+.vibe-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.vibe-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.vibe-number {
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(0, 51, 102, 0.05); /* Very faint SMU Blue */
+    z-index: 1;
+}
+
+.vibe-content {
+    flex-basis: 45%;
+    z-index: 2;
+}
+
+.vibe-content h3 {
+    font-size: 32px;
+    color: #111;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff4500;
+    padding-left: 20px;
+}
+
+.vibe-img {
+    flex-basis: 45%;
+    height: 350px;
+    overflow: hidden;
+    box-shadow: 20px 20px 0px #003366; /* SMU Blue solid shadow offset */
+    transition: 0.5s;
+}
+
+.vibe-card.reverse .vibe-img {
+    box-shadow: -20px 20px 0px #ff4500; /* Orangered shadow for variety */
+}
+
+.vibe-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: 0.5s;
+}
+
+.vibe-card:hover .vibe-img img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+    .vibe-card, .vibe-card.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .vibe-content h3 {
+        border-left: none;
+        border-bottom: 4px solid #ff4500;
+        padding: 0 0 10px 0;
+    }
+    .vibe-img {
+        width: 100%;
+        margin-top: 30px;
+        box-shadow: 10px 10px 0px #003366;
+    }
+}
+
+
+
+
+/* --- Professional Footer Styling --- */
+.main-footer {
+    background: #0a0d14; /* Deep Charcoal/Navy */
+    color: #fff;
+    padding: 80px 0 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.brand-info {
+    flex: 2; /* Makes the logo/about section wider */
+}
+
+.footer-logo {
+    width: 180px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Makes the logo white */
+}
+
+.footer-col h4 {
+    font-size: 18px;
     margin-bottom: 25px;
-    margin-top: 20px;
+    position: relative;
     font-weight: 600;
 }
-.icons{
-    width: 100%;
+
+/* Red accent line under footer headings */
+.footer-col h4::after {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: #ff4500;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+}
+
+.footer-col p {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ff4500;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+    transition: 0.3s;
+    filter: grayscale(1) brightness(1.5);
+}
+
+.social-links img:hover {
+    filter: grayscale(0) brightness(1);
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-    padding: 30px 0;
-    color:black;
-    margin: 0 14px;
-    cursor: pointer;
-    padding: 18px 0;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.footer-logo {
+    width: 200px; /* Footer logos look better a bit wider */
+    height: auto;
+    /* This makes the colored logo look clean on a dark background */
+    filter: brightness(0) invert(1); 
+    margin-bottom: 20px;
+}
+
+.logo-box {
+    padding: 10px 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        text-align: left;
+    }
 }

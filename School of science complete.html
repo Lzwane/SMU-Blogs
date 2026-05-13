@@ -1,170 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SST | School of Science and Technology</title>
+    <style>
+        /* --- CSS STYLING (MINIMALIST ELITE AESTHETIC) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-/* Add a gray background color with some padding */
-body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
-}
+        body {
+            background-color: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  font-size: 20px;
-  text-align: center;
-  background-image: url(sstbackground1.jpeg) ;
-  height: 25%;
-  background-size: contain;
-}
+        /* Hero Section */
+        .sst-header {
+            min-height: 50vh;
+            background-image: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.7)), 
+                              url('https://www.oecd.org/content/dam/oecd/en/publications/reports/2020/02/the-digitalisation-of-science-technology-and-innovation_fe2855a5/b9e4a2c0-en.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 100%;
-}
+        .category-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ff4500;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-}
+        .back-nav { position: absolute; top: 30px; left: 5%; }
+        .btn-back {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 8px 18px;
+            font-size: 13px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; color: #003366; }
 
-/* Fake image */
-.fakeimg {
-  background-image: url();
-  width: 100%;
-  padding: 20px;
-}
-.sstarticle1 {
-  background-image: url(sstarticle1.jpg);
-  width: 87%;
-  padding: 30px;
-}
-.sstarticle2 {
-  background-image: url(sstarticle2.jpg);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  width:100% ;
-  height: 100vh;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  
-}
-.sstarticle3{
-  background-image: url(ai.jpg);
-  width: 100%;
-  padding: 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+        /* Main Grid */
+        .content-section { width: 85%; margin: 80px auto; text-align: center; }
+        .section-title h2 { font-size: 32px; border-bottom: 4px solid #ff4500; display: inline-block; padding-bottom: 10px; margin-bottom: 40px; }
 
-/* Add a card effect for articles */
-.card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
-}
+        .sst-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        .sst-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            border-top: 4px solid #003366;
+            transition: 0.4s;
+            cursor: pointer;
+        }
 
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
+        .sst-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .btn-action { display: inline-block; margin-top: 20px; color: #ff4500; font-weight: bold; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-}
-li a{
-  color: black;
-}
-li a:hover{
-  background-color: transparent;
-}
-li{
-    display: inline;
-    padding: 8px;
-    
-}
-.p1{
-  margin-left: auto;
-  
-}
-</style>
+        /* Modal / Pop-up Styling */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            text-align: left;
+        }
+
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: #999; }
+        .dept-list { list-style: none; margin-top: 20px; }
+        .dept-list li { padding: 10px 0; border-bottom: 1px solid #eee; color: #555; }
+        .dept-list li:last-child { border-bottom: none; }
+
+        /* Dean Profile */
+        .leadership-box { padding: 60px 0; text-align: center; border-top: 1px solid #eee; }
+        .dean-profile h4 { color: #003366; font-size: 20px; }
+    </style>
 </head>
 <body>
-  <button onclick="window.history.back()">Go Back</button>
-  <br>
 
-<div class="header">
-  <nav>
-    <h2>School of Science & Technology</h2>
-    <ul>
-        <li><a href="BSC timetable.html">Timetable</a></li>
-        <li><a href="SST Commitee.html">School Committee</a></li>
-        <li><a href="SST Details.html">Contact Details</a></li>
-    </ul>
-    </nav>
-</div>
+    <section class="sst-header">
+        <div class="back-nav"><a href="index.html" class="btn-back">← Back to Portal</a></div>
+        <span class="category-tag">Elite Fresher Hub</span>
+        <h1>School of Science and Technology</h1>
+    </section>
 
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h2>UPDATE ON NSB AIRCONDITIONING AND MAINTANANCE</h2>
-      <h5>Title description, Dec 23, 2024</h5>
-      <div class="sstarticle1" style="height:600px;"></div>
-      <p>The SST Council has received several and various complaints from students in the school about the issue of air-conditions at the NSB especially in the labs, students had even resorted to bringing in their own smaller-nyana fans just to ensure they get some air</p>
-      <p>The SST council as the custodian of students took the matter seriously and escalated the matter to chief operating officer. We are pleased to inform you that the university has aquired air-conditioners and installations are underway.The council remains dedicated to assisting students of school</p>
+    <section class="content-section">
+        <div class="section-title"><h2>SST Navigator</h2></div>
+        <div class="sst-grid">
+            
+            <div class="sst-card" onclick="toggleModal('deptModal')">
+                <h3>Our Departments</h3>
+                <p>Explore the diverse academic fields available within the School of Science and Technology.</p>
+                <span class="btn-action">View Departments →</span>
+            </div>
+
+            <div class="sst-card" onclick="toggleModal('leadModal')">
+                <h3>Student Leadership</h3>
+                <p>Connect with the official chairperson of the SST student body for support and guidance.</p>
+                <span class="btn-action">View Chairperson →</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="leadership-box">
+        <div class="dean-profile">
+            <h4>Prof. Molatlhegi Nelson Sithebe</h4>
+            <p style="color: #888; font-size: 13px;">Executive Dean: SST</p>
+        </div>
+    </section>
+
+    <div id="deptModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal('deptModal')">&times;</span>
+            <h3 style="color:#003366; border-bottom: 2px solid #ff4500; display: inline-block;">SST Departments</h3>
+            <ul class="dept-list">
+                <li>Computer Science</li>
+                <li>Statistics</li>
+                <li>Mathematics & Applied Mathematics</li>
+                <li>Biology</li>
+                <li>Biochemistry</li>
+                <li>Physics</li>
+                <li>Chemistry</li>
+                <li>English</li>
+            </ul>
+        </div>
     </div>
-    <div class="card">
-      <h2>From a delivery boy to a PhD graduate</h2>
-      <h5>Dr Abongile Bele's story of perseverance, Sep 2, 2024</h5>
-      <div class="sstarticle2" ></div>
-      <p>Dr. Abongile Bele, born on April 14, 1996</p>
-      <p class="p1">Eastern Cape, overcame a challenging childhood to achieve a PhD in Physics at 28. Despite poverty and tragedy, he excelled in studies, working part-time from age 13 to support his family.His research on mixed-phase nanophosphor materials has led to groundbreaking findings,<br> and he is now a lecturer and mentor, inspiring others to pursue STEM fields. Dr. Bele's story is a testament to determination and hard work,inspiring young people from disadvantaged backgrounds to strive for greatness.</p>
+
+    <div id="leadModal" class="modal-overlay">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close-modal" onclick="toggleModal('leadModal')">&times;</span>
+            <div style="font-size: 40px; margin-bottom: 10px;">🎓</div>
+            <h3 style="color:#111; margin-bottom: 10px;">Mr. Caswell Xaba</h3>
+            <p style="color:#ff4500; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+                Chairperson of the School of Science and Technology
+            </p>
+            <p style="margin-top: 20px; color: #666; font-size: 14px;">
+                Directing student affairs and academic advocacy within the SST.
+            </p>
+        </div>
     </div>
-    <div class="card">
-        <h2>Students enhance their application of Mathematics in IT and 4IR</h2>
-        <h5> May, 2024</h5>
-        <div class="sstarticle3" style="height:400px;"></div>
-        <p>A workshop on computer science and technology was </p>
-        <p>held for postgraduate students, covering applications of mathematics in IT and the Fourth Industrial Revolution. Experts shared knowledge on AI, game development, and programming, with hands-on activities. Students gained a foundational understanding of computer science and explored career paths, engaging with potential employers and identifying real-life math applications. </p>
-      </div>
-      
- 
-    
-  
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "block";
+            }
+        }
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target.className === "modal-overlay") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
-
- 

@@ -1,156 +1,212 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP | School of Pharmacy</title>
+    <style>
+        /* --- CSS STYLING (MATCHING THE ELITE FRESHER THEME) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-/* Add a gray background color with some padding */
+        body {
+            background-color: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
-}
+        /* Hero Section */
+        .sop-header {
+            min-height: 50vh;
+            background-image: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.7)), 
+                              url('https://cdn.sanity.io/images/0vv8moc6/biopharn/64e01bf1f7dbd9099e249e9c3247fdbb9a46b4b1-1280x720.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
 
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  font-size: 23px;
-  color: black;
-  text-align: center;
-  background-image: url(headpharm.jpg) ;
-  background-size: 45vh;
-  height: 25%;
-}
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 100%;
-}
+        .category-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #2ecc71; /* Pharmacy Green */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-}
+        .back-nav { position: absolute; top: 30px; left: 5%; }
+        .btn-back {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 8px 18px;
+            font-size: 13px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; color: #003366; }
 
-/* Fake image */
-.fakeimg {
-  background-image: url();
-  width: 100%;
-  padding: 20px;
-}
-.PART1 {
-  background-image: url(PART1.webp);
-  width: 87%;
-  padding: 30px;
-}
-.HART2 {
-  background-image: url(HART2.jpg);
-   width:100%;
-  height: 100vh;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  
-}
-.HART3{
-  background-image: url(HART3.webp);
-  width: 100%;
-  padding: 30px;
-  background-repeat: no-repeat;
-}
-/* Add a card effect for articles */
-.card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
-}
+        /* Main Content Grid */
+        .content-section { width: 85%; margin: 80px auto; text-align: center; }
+        .section-title h2 { 
+            font-size: 32px; 
+            border-bottom: 4px solid #2ecc71; 
+            display: inline-block; 
+            padding-bottom: 10px; 
+            margin-bottom: 40px; 
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
+        .sop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    
-}
-li{
-    display: inline;
-}
-li a{
-    color: black;
-    padding: 10px;
-    font-size: larger;
-}
-.p1{
-  margin-left: auto;
-  
-}
-.art1{
-    color: red;
-}
-</style>
+        .sop-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            border-top: 4px solid #003366;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .sop-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+        }
+
+        .btn-action { 
+            display: inline-block; 
+            margin-top: 20px; 
+            color: #2ecc71; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+        }
+
+        /* Modal / Pop-up Styling */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            text-align: left;
+        }
+
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: #999; }
+        .dept-list { list-style: none; margin-top: 20px; }
+        .dept-list li { padding: 12px 0; border-bottom: 1px solid #eee; color: #555; }
+        .dept-list li:last-child { border-bottom: none; }
+
+        /* Dean Profile Footer */
+        .leadership-box { padding: 60px 0; text-align: center; border-top: 1px solid #eee; }
+        .dean-profile h4 { color: #003366; font-size: 20px; }
+
+    </style>
 </head>
 <body>
-  <button onclick="window.history.back()">Go Back</button>
-  <br>
 
-<div class="header">
-  <nav>
-    <h2>School of Pharmacy</h2>
-    <ul>
-        <li><a href="Bpharm table.html">Timetable</a></li>
-        <li><a href="PHARMCY COMMITEE.HTML">School Committee</a></li>
-        <li><a href="Pharm Contacts.html"> Contact Details</a></li>
-    </ul>
-    </nav>
-</div>
- <div class="row">
-          <div class="leftcolumn">
-            <div class="card">
-              <h2>Pharmacy Laboratory Accident</h2>
-              <h5>Feb 15 , 2024</h5>
-              <div class="PART1" style="height:600px;"></div>
-              <p>A laboratory incident  occurred the School Of Pharmacy New Lab. 
-                The incident involved a chemical exposure that affected pharmacy third year students. 
-                During a scheduled laboratory session in the Pharmaceutical 
-                Lab of SOP, students were conducting experiments involving a certain chemical.
-                Unfortunately, later after the practical session, an unexpected incident occurred, 
-                resulting in students experiencing certain reactions to the chemical, specifically 
-                affecting their eyes leading to their immediate need for medical care. </p>
-              <p>We are pleased to inform you that
-                 most students have shown significant improvement and have fully recovered. 
-                This is mainly because we ensured that all affected students
-                 received the proper medical attention befitting of their condition.
-                 We would like to first thank everyone who shared their heartfelt messages
-                  to the BPharm 3s and wished them well during this difficult period. The support that was
-                  demonstrated by the SMU community and other external
-                   members was truly overwhelming and did not go unnoticed.
-                </p>
+    <section class="sop-header">
+        <div class="back-nav"><a href="index.html" class="btn-back">← Back to Portal</a></div>
+        <span class="category-tag">Elite Fresher Hub</span>
+        <h1>School of Pharmacy</h1>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title"><h2>Pharmacy Navigator</h2></div>
+        <div class="sop-grid">
+            
+            <div class="sop-card" onclick="toggleModal('deptModal')">
+                <h3>Academic Departments</h3>
+                <p>Explore the core disciplines that form the foundation of pharmaceutical excellence at SMU.</p>
+                <span class="btn-action">View Departments →</span>
             </div>
-           
+
+            <div class="sop-card" onclick="toggleModal('leadModal')">
+                <h3>Student Leadership</h3>
+                <p>Get in touch with your School Chairperson for advocacy, support, and guidance.</p>
+                <span class="btn-action">View Chairperson →</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="leadership-box">
+        <div class="dean-profile">
+            <h4>Prof. Yahaya Gana Sambo</h4>
+            <p style="color: #888; font-size: 13px;">Executive Dean: School of Pharmacy</p>
+        </div>
+    </section>
+
+    <div id="deptModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal('deptModal')">&times;</span>
+            <h3 style="color:#003366; border-bottom: 2px solid #2ecc71; display: inline-block;">Pharmacy Departments</h3>
+            <ul class="dept-list">
+                <li>Clinical Pharmacy</li>
+                <li>Pharmacy Practice</li>
+                <li>Pharmaceutical Sciences</li>
+                <li>Public Health Pharmacy Management (PHPM)</li>
+                <li>Photobiology Laboratory</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="leadModal" class="modal-overlay">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close-modal" onclick="toggleModal('leadModal')">&times;</span>
+            <div style="font-size: 40px; margin-bottom: 10px;">💊</div>
+            <h3 style="color:#111; margin-bottom: 5px;">Lesedi Diketane</h3>
+            <p style="color:#2ecc71; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+                Chairperson of the School of Pharmacy
+            </p>
+            <p style="margin-top: 20px; color: #666; font-size: 14px; line-height: 1.6;">
+                Advocating for student pharmacy excellence and fostering a supportive learning environment.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "block";
+            }
+        }
+
+        // Close when clicking outside the white box
+        window.onclick = function(event) {
+            if (event.target.className === "modal-overlay") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

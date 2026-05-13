@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Directory | SMU Elite Fresher Portal</title>
+    <style>
+        /* --- CSS STYLING (MATCHING PORTAL AESTHETIC) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body { background-color: #fcfcfc; color: #333; overflow-x: hidden; }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            padding: 10px 6%;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-box img { height: 60px; width: auto; }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+        }
+
+        .nav-links ul li a {
+            color: #003366;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Header Section */
+        .contact-header {
+            padding: 160px 6% 60px;
+            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('images/campus-life.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .category-tag { color: #ff4500; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; }
+        .contact-header h1 { font-size: 42px; margin-top: 10px; }
+
+        /* Contact Grid */
+        .contact-container { width: 90%; max-width: 1200px; margin: 60px auto; }
+        
+        .contact-section-title {
+            margin: 40px 0 20px;
+            font-size: 24px;
+            color: #003366;
+            border-left: 5px solid #ff4500;
+            padding-left: 15px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            border-top: 4px solid #003366;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+
+        .contact-card h3 { font-size: 18px; margin-bottom: 15px; color: #111; }
+        
+        .contact-info-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .info-label { font-weight: 700; width: 100px; color: #555; flex-shrink: 0; }
+        .info-value { color: #666; word-break: break-all; }
+        .info-value a { color: #ff4500; text-decoration: none; }
+
+        /* Emergency / 24/7 Accent */
+        .emergency-card { border-top-color: #ff4500; background: #fffaf9; }
+
+        /* Footer */
+        footer { background: #003366; color: white; text-align: center; padding: 40px 0; margin-top: 80px; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-box">
+                <a href="https://www.smu.ac.za/">
+                    <img src="images/Logo.png" alt="SMU Logo" class="main-logo">
+                </a>
+            </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="newsflash.html">Newsflash</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="sports.html">Sports</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="contact-header">
+        <span class="category-tag">Support Directory</span>
+        <h1>Get In Touch</h1>
+        <p>Your guide to navigating administrative and academic support at SMU.</p>
+    </header>
+
+    <div class="contact-container">
+
+        <h2 class="contact-section-title">Safety & Security</h2>
+        <div class="contact-grid">
+            <div class="contact-card emergency-card">
+                <h3>Campus Control (24/7)</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">Old Nutrition Building, Main Entrance</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Control Room:</span>
+                    <span class="info-value">012 521 4139</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Supervisor:</span>
+                    <span class="info-value">082 793 1367 / 6004</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="contact-section-title">Academic Leadership</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>CSIT Department</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">HoD:</span>
+                    <span class="info-value">Dr. Taurai Hungwe</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">012 521 3994</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"><a href="mailto:taurai.hungwe@smu.ac.za">taurai.hungwe@smu.ac.za</a></span>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Registrar</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Name:</span>
+                    <span class="info-value">Ms. Vuyiswa Mokgoko</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"><a href="mailto:secretary.registrar@smu.ac.za">secretary.registrar@smu.ac.za</a></span>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Library Services</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Director:</span>
+                    <span class="info-value">Dr. R.S. Mhinga</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">012 521 4151 / 4544</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"><a href="mailto:rirhandzu.mhinga@smu.ac.za">rirhandzu.mhinga@smu.ac.za</a></span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="contact-section-title">Student Support & ICT</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>ICT Technical Support</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">012 521 5768 / 5988</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"><a href="mailto:ICTstudent_support@swave.smu.ac.za">ICTstudent_support@swave.smu.ac.za</a></span>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Research Development</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">Clinical Pathology, 5th Floor, S519</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Lead:</span>
+                    <span class="info-value">Ms. Fulufhelo Malamatsho</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">012 521 5171</span>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>MIAAVS (Audio-Visual)</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Reception:</span>
+                    <span class="info-value">012 521 4541</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"><a href="mailto:miaavs@smu.ac.za">miaavs@smu.ac.za</a></span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="contact-section-title">General Administration</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>General Enquiries</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Address:</span>
+                    <span class="info-value">Molotlegi Street, Ga-Rankuwa</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">012 521 5759 / 5760</span>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Marketing & Comms</h3>
+                <div class="contact-info-row">
+                    <span class="info-label">Director:</span>
+                    <span class="info-value">Ms. T. Mphaphuli (Acting)</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Secretary:</span>
+                    <span class="info-value">Ms. Gerda Meyer</span>
+                </div>
+                <div class="contact-info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"><a href="mailto:gerda.meyer@smu.ac.za">gerda.meyer@smu.ac.za</a></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sefako Makgatho Health Sciences University | Elite Fresher Support Hub</p>
+    </footer>
+
+</body>
+</html>

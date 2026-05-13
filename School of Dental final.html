@@ -1,185 +1,213 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOHS | School of Oral Health Sciences</title>
+    <style>
+        /* --- CSS STYLING (MINIMALIST ELITE AESTHETIC) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-/* Add a gray background color with some padding */
-body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
-}
+        body {
+            background-color: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  background-image: url(DART1.webp) ;
-  background-size: 45vh;
-  height: 25%;
-}
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 100%;
-}
+        /* Hero Section */
+        .dental-header {
+            min-height: 50vh;
+            background-image: linear-gradient(rgba(0,34,68,0.7), rgba(0,34,68,0.7)), 
+                              url('https://doctorlaurenbecker.com/tpn/gen/GettyImages-1016764012.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-}
+        .category-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #00d2ff; /* Dental Teal */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
 
-/* Fake image */
-.fakeimg {
-  background-image: url();
-  width: 100%;
-  padding: 20px;
-}
-.HART1 {
-  background-image: url(Dart2.webp);
-  width: 87%;
-  padding: 30px;
-}
-.HART2 {
-  background-image: url(dart3.jpeg);
-   width:100%;
-  height: 100vh;
-  padding: 30px;
-  background-repeat: no-repeat;
-}
+        .back-nav { position: absolute; top: 30px; left: 5%; }
+        .btn-back {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 8px 18px;
+            font-size: 13px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; color: #002244; }
 
+        /* Main Content Grid */
+        .content-section { width: 85%; margin: 80px auto; text-align: center; }
+        .section-title h2 { 
+            font-size: 32px; 
+            border-bottom: 4px solid #00d2ff; 
+            display: inline-block; 
+            padding-bottom: 10px; 
+            margin-bottom: 40px; 
+        }
 
-.HART3{
-  background-image: url(dart4.webp);
-  width: 100%;
-  padding: 30px;
-  background-repeat: no-repeat;
-}
-/* Add a card effect for articles */
-.card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
-}
+        .dental-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
+        .dental-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            border-top: 4px solid #002244;
+            transition: 0.4s;
+            cursor: pointer;
+        }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    
-}
-li{
-    display: inline;
-}
-li a{
-    color: white;
-    padding: 10px;
-    font-size: larger;
-}
-.p1{
-  margin-left: auto;
-  
-}
-.art1{
-    color: red;
-    
-}
-</style>
+        .dental-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+        }
+
+        .btn-action { 
+            display: inline-block; 
+            margin-top: 20px; 
+            color: #00d2ff; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+        }
+
+        /* Modal / Pop-up Styling */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            text-align: left;
+        }
+
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: #999; }
+        .dept-list { list-style: none; margin-top: 20px; }
+        .dept-list li { padding: 12px 0; border-bottom: 1px solid #eee; color: #555; }
+        .dept-list li:last-child { border-bottom: none; }
+
+        /* Dean Profile Footer */
+        .leadership-box { padding: 60px 0; text-align: center; border-top: 1px solid #eee; }
+        .dean-profile h4 { color: #002244; font-size: 20px; }
+
+    </style>
 </head>
 <body>
-  <button onclick="window.history.back()">Go Back</button>
-  <br>
-<div class="header">
-  <nav>
-    <h2>School of Dentistry</h2>
-    <ul>
-        <li><a href="BDT and BDS Timetable.html">Timetable</a></li>
-        <li><a href="BDS Committee.html">School Committee</a></li>
-        <li><a href="Diet Contacts.html">Contact Details</a> </li>
-    </ul>
-    </nav>
-</div>
 
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h2>Interschool Tournament Championship</h2>
-      <h5>May 22 , 2024</h5>
-      <div class="HART1" style="height:600px;"></div>
-      <p>The interschool tournament championship was highly anticipated event that brought together students
-        from the different school facalauties to compete in a soccer tournament.
-        After a day of fierce competition the Dental FC were crowned as Champions for the tournament
-      </p>
-      <p> Big ups to Dental FC for winning. KEEP IT UP BOYS!</p>
+    <section class="dental-header">
+        <div class="back-nav"><a href="index.html" class="btn-back">← Back to Portal</a></div>
+        <span class="category-tag">Oral Health Hub</span>
+        <h1>School of Oral Health Sciences</h1>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title"><h2>Dentistry Navigator</h2></div>
+        <div class="dental-grid">
+            
+            <div class="dental-card" onclick="toggleModal('deptModal')">
+                <h3>Clinical Departments</h3>
+                <p>Explore our dental surgery and oral health technology disciplines dedicated to clinical precision.</p>
+                <span class="btn-action">View Departments →</span>
+            </div>
+
+            <div class="dental-card" onclick="toggleModal('leadModal')">
+                <h3>Student Leadership</h3>
+                <p>Reach out to the School Chairperson for representation, clinical guidance, and student support.</p>
+                <span class="btn-action">View Chairperson →</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="leadership-box">
+        <div class="dean-profile">
+            <h4>Prof. Sibusiso Stephen Shangase</h4>
+            <p style="color: #888; font-size: 13px;">Executive Dean: School of Oral Health Sciences</p>
+        </div>
+    </section>
+
+    <div id="deptModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal('deptModal')">&times;</span>
+            <h3 style="color:#002244; border-bottom: 2px solid #00d2ff; display: inline-block;">Dental Disciplines</h3>
+            <ul class="dept-list">
+                <li>Bachelor of Dental Sciences (BDS)</li>
+                <li>Bachelor of Dental Therapy (BDT)</li>
+                <li>Oral Hygiene (OH)</li>
+                <li>Maxillofacial and Oral Surgery</li>
+                <li>Periodontology and Oral Medicine</li>
+                <li>Orthodontics</li>
+                <li>Prosthodontics</li>
+            </ul>
+        </div>
     </div>
-    <div class="card">
-      <h2>World Oral Day</h2>
-      <h5> March 20, 2024</h5>
-      <div class="HART2" style="height: 400px;" ></div>
-      <p>The School of Dentistry at Sefako Makgatho Health Science
-        s University will celebrate World Oral Health Day on March 20, 
-        2024, with the theme "A Happy mouth is A Happy body". The purpose is to raise
-         awareness that prioritizing oral health leads to better overall health, and to
-          educate people on preventing oral diseases and maintaining good oral health. Poor oral health is 
-          linked to serious medical conditions like pneumonia, heart disease, and pregnancy complications. To improve oral 
-          health, the school encourages everyone to follow simple rules: take care of your mouth daily, eat a healthy diet,
-           avoid tobacco, brush and clean your teeth regularly, and visit a registered oral health practitioner twice a year.
-            By doing so, oral diseases like dental caries,
-         periodontal diseases, and tooth loss can be prevented, ensuring a beautiful smile and overall good health.</p>
-      <p></p>
-      </div>
-      <div class="card">
-        <h2>Memorandum To The School of Dentistry</h2>
-        <h5>May 15 , 2024</h5>
-        <div class="HART3" style="height:300px;"></div>
-        <p>
-          Here is a shortened version of the text:
 
-          The School of Dentistry is addressing the impact of a recent gas leak/disruption in the dental laboratories and clinical areas.
-           After consultation, it was determined that the gas line is irreparable and unsafe. To minimize disruption to the academic year, 
-           the Academic Planning Committee has implemented the following measures:<br></br>
-          
-          - Adjusted academic timetable for affected groups (BDS 2 & 3) to continue practical training at an off-site facility<br>
-          - Transportation will be provided and a travel roster will be drawn up<br>
-          - Interim arrangements for BDS 4 & 5 to use shareable handpieces<br>
-          - Timetable adjustments will be communicated through HODs, DSC, and Class representatives<br>
-          - Students should continue with scheduled academic sessions<br>
-          
-          The School is working to find a long-term solution to replace the damaged gas line.
-        </p>
-        <p></p>
-      </div>
-     </body>
+    <div id="leadModal" class="modal-overlay">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close-modal" onclick="toggleModal('leadModal')">&times;</span>
+            <div style="font-size: 40px; margin-bottom: 10px;">🦷</div>
+            <h3 style="color:#111; margin-bottom: 5px;">Junior Netshipale</h3>
+            <p style="color:#00d2ff; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+                Chairperson: School of Oral Health Sciences
+            </p>
+            <p style="margin-top: 20px; color: #666; font-size: 14px; line-height: 1.6;">
+                Focused on fostering professional integrity and supporting oral health students in their journey to clinical excellence.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "block";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === "modal-overlay") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
 </html>
-
- 

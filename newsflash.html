@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsflash | SMU Elite Fresher Portal</title>
+    <style>
+        /* --- CSS STYLING (EDITORIAL NEWS THEME) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body { background-color: #f4f7f9; color: #333; overflow-x: hidden; }
+
+        /* Navigation Bar (Consistent with Portal) */
+        nav {
+            display: flex;
+            padding: 10px 6%;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-box img { height: 60px; width: auto; }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #003366;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Newsflash Header */
+        .news-header {
+            padding: 140px 6% 60px;
+            background: #003366;
+            color: white;
+            text-align: center;
+        }
+
+        .news-header h1 { font-size: 42px; letter-spacing: 2px; }
+        .category-tag { color: #ff4500; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; }
+
+        /* News Container */
+        .news-container { width: 90%; max-width: 1200px; margin: 50px auto; }
+        .section-divider { 
+            margin: 60px 0 30px; 
+            padding-bottom: 10px; 
+            border-bottom: 2px solid #ff4500; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            color: #003366;
+        }
+
+        /* News Grid Layout */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+
+        .news-image { width: 100%; height: auto; display: block; }
+        
+        .news-content { padding: 25px; flex-grow: 1; }
+        .news-date { font-size: 13px; color: #ff4500; font-weight: 600; margin-bottom: 10px; display: block; }
+        .news-content h3 { font-size: 20px; color: #111; margin-bottom: 15px; line-height: 1.4; }
+        .news-content p { font-size: 14px; color: #666; line-height: 1.6; }
+
+        /* View More Button */
+        .view-more-container { text-align: center; margin: 80px 0; }
+        .btn-view-more {
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #003366;
+            color: #003366;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-view-more:hover { background: #003366; color: white; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-box">
+                <a href="https://www.smu.ac.za/">
+                    <img src="images/Logo.png" alt="SMU Logo" class="main-logo">
+                </a>
+            </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="newsflash.html">Newsflash</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="sports.html">Sports</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="news-header">
+        <span class="category-tag">Live Updates</span>
+        <h1>SMU Newsflash</h1>
+        <p>Your official source for campus announcements, academic research, and student life.</p>
+    </header>
+
+    <div class="news-container">
+    
+    <h2 class="section-divider">Coming Up</h2>
+    <div class="news-grid">
+
+        <div class="news-card">
+            <img src="images/africa day.jpeg" class="news-image" alt="Africa Day SMU">
+            <div class="news-content">
+                <span class="news-date">May 22, 2026</span>
+                <h3>Africa Day Cultural Flea Market</h3>
+                <p>Save the date! Join us for a day of vibrant entertainment, local food, and music at SMU's very own cultural flea market. #WeAreSMU</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/som research.jpeg" class="news-image" alt="SOM Research Day">
+            <div class="news-content">
+                <span class="news-date">May 20, 2026</span>
+                <h3>SOM Research Day: Interdisciplinary Health Research</h3>
+                <p>Theme: Strengthening Evidence-Based Practice. Join us at the Dental Building, Room FND 208, to showcase innovative research.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/mmm.jpeg" class="news-image" alt="May Measure Month">
+            <div class="news-content">
+                <span class="news-date">May 18 - 20, 2026</span>
+                <h3>#TheBigSqueeze: May Measure Month</h3>
+                <p>Raised blood pressure is a silent killer. Visit the Library Lawn from 11:00 - 14:00 for your free check-up and save lives.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/vote.jpeg" class="news-image" alt="Convocation Elections">
+            <div class="news-content">
+                <span class="news-date">May 16, 2026</span>
+                <h3>Convocation Elections 2026</h3>
+                <p>Vote for a stronger tomorrow. Held at Forever Resorts, Badplaas. Transport arrangements available through the Presidential candidate's office.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/rip 2.jpeg" class="news-image" alt="Candlelight Service">
+            <div class="news-content">
+                <span class="news-date">May 14, 2026</span>
+                <h3>Candlelight Service: Thato Gladwin Makwe</h3>
+                <p>A service of comfort and strength at the SMU Amphitheater. Honoring the life and legacy of our late BSc student.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/kitchen.jpeg" class="news-image" alt="SST Kitchen">
+            <div class="news-content">
+                <span class="news-date">Weekly: Tue & Thu</span>
+                <h3>SST Kitchen: Fuel Your Success</h3>
+                <p>Grab breakfast at NSB First Floor from 09:00 - 10:00. Start your day the SST way with a quick and healthy fuel-up.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/atf.jpeg" class="news-image" alt="ATF AI Challenge">
+            <div class="news-content">
+                <span class="news-date">Apply Now</span>
+                <h3>ATF AI Challenge: Build the Revolution</h3>
+                <p>Get free AI training and build real-world solutions. Supported by Google.org to help you launch a career in tech.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-divider">Past Events & Archive</h2>
+    <div class="news-grid">
+        
+        <div class="news-card">
+            <img src="images/bash.jpeg" class="news-image" alt="Freshers Bash">
+            <div class="news-content">
+                <span class="news-date">May 09, 2026</span>
+                <h3>SMU Freshers Bash: A Night to Remember</h3>
+                <p>Recapping the massive event at the Sports Complex featuring Makhadzi, Focalistic, and many more. #FreshersBash2026</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/donate.jpeg" class="news-image" alt="Blood Drive">
+            <div class="news-content">
+                <span class="news-date">April 21 - 22, 2026</span>
+                <h3>SANBS Blood Drive: Pledge to Save Lives</h3>
+                <p>Thank you SMU for the incredible turnout at the Student Tent. Your donations are bringing goals to life in 2026.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/sasuf.jpeg" class="news-image" alt="SASUF Session">
+            <div class="news-content">
+                <span class="news-date">April 16, 2026</span>
+                <h3>SASUF: Visual Culture & Interculturality</h3>
+                <p>An insightful coffee break session with Guest Speaker Staffan Löfving discussing new directions in global culture.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/train.jpeg" class="news-image" alt="CPR Training">
+            <div class="news-content">
+                <span class="news-date">April 2026</span>
+                <h3>Clinical Skills: Heartsaver CPR & AED</h3>
+                <p>Training completed at the Simulation Centre. Providing students with lifesaving skills based on 2025 guidelines.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/rip 1.jpeg" class="news-image" alt="Memorial Service">
+            <div class="news-content">
+                <span class="news-date">April 08, 2026</span>
+                <h3>Memorial Service: Thabiso Mxabela</h3>
+                <p>Honoring a dedicated member of the Directorate: Research and Innovation. Farewell to a valued colleague.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/research.jpeg" class="news-image" alt="Dental Research">
+            <div class="news-content">
+                <span class="news-date">April 2026</span>
+                <h3>Showcase for Your Research: R15,000 Win</h3>
+                <p>Congratulations to the dental and oral hygiene students who showcased their skills in the MPS Foundation competition.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="images/bursary.jpeg" class="news-image" alt="FirstRand Bursary">
+            <div class="news-content">
+                <span class="news-date">Application Cycle Closed</span>
+                <h3>FirstRand Empowerment Foundation Bursary</h3>
+                <p>Empowering postgraduate students in Engineering, Math, and Computer Science to turn potential into progress.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-more-container">
+        <button class="btn-view-more">View More</button>
+    </div>
+    </div>
+
+    <footer style="background: #003366; color: white; text-align: center; padding: 40px 0;">
+        <p>&copy; 2026 Sefako Makgatho Health Sciences University | Newsflash Department</p>
+    </footer>
+
+</body>
+</html>

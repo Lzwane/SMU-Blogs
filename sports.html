@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMU Sports | Elite Freshers Portal</title>
+    <style>
+        /* --- CSS STYLING (MATCHING ELITE FRESHER THEME) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body { background-color: #ffffff; color: #333; overflow-x: hidden; }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            padding: 10px 6%;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-box .main-logo {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            position: relative;
+            transition: 0.4s;
+            border-radius: 25px;
+        }
+
+        .nav-links ul li a {
+            color: #003366;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            z-index: 2;
+            position: relative;
+        }
+
+        .nav-links ul li::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #ff4500;
+            border-radius: 25px;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            z-index: 1;
+        }
+
+        .nav-links ul li:hover::before { transform: scaleX(1); }
+        .nav-links ul li:hover a { color: #fff; }
+
+        /* Header Section */
+        .sports-header {
+            padding-top: 100px;
+            min-height: 50vh;
+            background-image: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.7)), url('images/sports.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .category-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ff4500;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Sports Grid */
+        .content-section { width: 85%; margin: 80px auto; text-align: center; }
+        .section-title h2 { font-size: 32px; border-bottom: 4px solid #ff4500; display: inline-block; padding-bottom: 10px; margin-bottom: 50px; }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .sport-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.4s;
+            text-align: left;
+        }
+
+        .sport-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .sport-img { width: 100%; height: 220px; object-fit: cover; }
+        .sport-info { padding: 25px; }
+        .sport-info h3 { font-size: 20px; color: #003366; margin-bottom: 10px; }
+        .sport-info p { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+
+        .btn-apply {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-apply:hover { background: #ff4500; }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 450px;
+            margin: 8% auto;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #999; }
+        .modal-content input, .modal-content select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #eee; border-radius: 4px; }
+        .submit-btn { background: #25D366; color: white; border: none; padding: 15px; width: 100%; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-box">
+                <a href="https://www.smu.ac.za/">
+                    <img src="images/Logo.png" alt="SMU Logo" class="main-logo">
+                </a>
+            </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="newsflash.html">Newsflash</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="sports.html">Sports</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="sports-header">
+        <span class="category-tag">Athletic Excellence</span>
+        <h1>SMU Sports Teams</h1>
+    </section>
+
+    <section class="content-section">
+        <div class="section-title"><h2>Choose Your Discipline</h2></div>
+        
+        <div class="sports-grid">
+            <div class="sport-card">
+                <img src="images/Football pic.jpeg" class="sport-img">
+                <div class="sport-info">
+                    <h3>Football</h3>
+                    <p>Join the pride of SMU on the pitch. Showcase your talent in the local and varsity leagues.</p>
+                    <button class="btn-apply" onclick="openSportsModal('Football')">Apply to Join</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="images/basket ball.jpeg" class="sport-img">
+                <div class="sport-info">
+                    <h3>Basketball</h3>
+                    <p>High energy, high stakes. Join the giants on the court and represent the navy and orange.</p>
+                    <button class="btn-apply" onclick="openSportsModal('Basketball')">Apply to Join</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="images/netball pic.jpeg" class="sport-img">
+                <div class="sport-info">
+                    <h3>Netball</h3>
+                    <p>Precision and teamwork. Be part of one of the most competitive teams on campus.</p>
+                    <button class="btn-apply" onclick="openSportsModal('Netball')">Apply to Join</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="images/chess pic.jpeg" class="sport-img">
+                <div class="sport-info">
+                    <h3>Chess</h3>
+                    <p>The ultimate mental battle. Master the board and compete in inter-university tournaments.</p>
+                    <button class="btn-apply" onclick="openSportsModal('Chess')">Apply to Join</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="images/karate pic.jpeg" class="sport-img">
+                <div class="sport-info">
+                    <h3>Karate</h3>
+                    <p>Discipline and strength. Master the art of self-defense with our elite training team.</p>
+                    <button class="btn-apply" onclick="openSportsModal('Karate')">Apply to Join</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="images/Sports logo.jpeg" class="sport-img">
+                <div class="sport-info">
+                    <h3>Other Sports</h3>
+                    <p>Rugby, Volleyball, Athletics, and more. Explore the full range of SMU sporting codes.</p>
+                    <button class="btn-apply" onclick="openSportsModal('General Sports')">Inquire Here</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="sportsModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeSportsModal()">&times;</span>
+            <h3 id="modalTitle" style="color: #003366; margin-bottom: 10px;">Apply for Team</h3>
+            <form id="sportsForm">
+                <input type="hidden" id="selectedSport">
+                <input type="text" id="stuName" placeholder="Full Name" required>
+                <input type="text" id="stuNum" placeholder="Student Number" required>
+                <select id="stuGender" required>
+                    <option value="" disabled selected>Select Team Category</option>
+                    <option value="Men's Team">Men's Team</option>
+                    <option value="Female Team">Female Team</option>
+                </select>
+                <button type="submit" class="submit-btn">Continue to WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openSportsModal(sportName) {
+            document.getElementById("sportsModal").style.display = "block";
+            document.getElementById("selectedSport").value = sportName;
+            document.getElementById("modalTitle").innerText = "Apply for " + sportName;
+        }
+
+        function closeSportsModal() {
+            document.getElementById("sportsModal").style.display = "none";
+        }
+
+        document.getElementById("sportsForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const sport = document.getElementById("selectedSport").value;
+            const name = document.getElementById("stuName").value;
+            const num = document.getElementById("stuNum").value;
+            const gender = document.getElementById("stuGender").value;
+
+            const phone = "27125215759"; 
+            const message = `Hello SMU Sports, I am ${name} (${num}). I would like to apply for the ${gender} of the ${sport} team.`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+            closeSportsModal();
+        });
+
+        window.onclick = function(event) {
+            if (event.target.className === "modal-overlay") {
+                closeSportsModal();
+            }
+        }
+    </script>
+</body>
+</html>

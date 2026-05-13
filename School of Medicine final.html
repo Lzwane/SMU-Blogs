@@ -1,182 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOM | School of Medicine</title>
+    <style>
+        /* --- CSS STYLING (MINIMALIST MEDICAL AESTHETIC) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-/* Add a gray background color with some padding */
-body {
-  font-family: Arial;
-  padding: 20px;
-  background: #f1f1f1;
-}
+        body {
+            background-color: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
 
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  font-size: 20px;
-  color: black;
-  text-align: center;
-  background-image: url(headmed.webp) ;
-  background-size: 45vh;
-  height: 25%;
-}
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 100%;
-}
+        /* Hero Section */
+        .som-header {
+            min-height: 50vh;
+            background-image: linear-gradient(rgba(0,34,68,0.75), rgba(0,34,68,0.75)), 
+                              url('https://humanitarianu.org/wp-content/uploads/2021/04/emerency-medicine.jpeg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-}
+        .category-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #4db8ff; /* Light Medical Blue */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
 
-/* Fake image */
-.fakeimg {
-  background-image: url();
-  width: 100%;
-  padding: 20px;
-}
-.HART1 {
-  background-image: url(MART1.jpeg);
-  width: 87%;
-  padding: 30px;
-}
-.HART2 {
-  background-image: url(mart2.jpg);
-   width:auto;
-   padding: 30px;
-  
-}
-    .HART3{
-  background-image: url(HART2.jpg);
-   width:100%;
-  height: 100vh;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-    }
-  
-/* Add a card effect for articles */
-.card {
-   background-color: white;
-   padding: 20px;
-   margin-top: 20px;
-}
+        .back-nav { position: absolute; top: 30px; left: 5%; }
+        .btn-back {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 8px 18px;
+            font-size: 13px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; color: #002244; }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
+        /* Main Content Grid */
+        .content-section { width: 85%; margin: 80px auto; text-align: center; }
+        .section-title h2 { 
+            font-size: 32px; 
+            border-bottom: 4px solid #4db8ff; 
+            display: inline-block; 
+            padding-bottom: 10px; 
+            margin-bottom: 40px; 
+        }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    
-}
-li{
-    display: inline;
-}
-li a{
-    color: black;
-    padding: 10px;
-    font-size: larger;
-}
-.p1{
-  margin-left: auto;
-  
-}
-.art1{
-    color: red;
-}
-</style>
+        .som-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .som-card {
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            border-top: 4px solid #002244;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .som-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05); 
+        }
+
+        .btn-action { 
+            display: inline-block; 
+            margin-top: 20px; 
+            color: #4db8ff; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+        }
+
+        /* Modal / Pop-up Styling */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 550px;
+            margin: 8% auto;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+            text-align: left;
+        }
+
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; cursor: pointer; color: #999; }
+        .dept-list { 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            list-style: none; 
+            margin-top: 20px; 
+            gap: 10px;
+        }
+        .dept-list li { padding: 8px 0; border-bottom: 1px solid #eee; color: #555; font-size: 14px; }
+
+        /* Dean Profile Footer */
+        .leadership-box { padding: 60px 0; text-align: center; border-top: 1px solid #eee; }
+        .dean-profile h4 { color: #002244; font-size: 20px; }
+
+    </style>
 </head>
 <body>
-  <button onclick="window.history.back()">Go Back</button>
-  <br>
-<div class="header">
-  <nav>
-    <h2>School of Medicine</h2>
-    <ul>
-        <li><a href="radiography table.html">Timetables</a></li>
-        <li><a href="SOM Committee.html">School Committee</a></li>
-        <li><a href="SOM contactDet.html">Contact Details</a></li>
-    </ul>
-    </nav>
-</div>
-<div class="card">
-    <h2>Interproffessional Education and Collaborative Practice</h2>
-    <h5> May 19, 2024</h5>
-    <div class="HART3" ></div>
-    <p></p>
-    <p class="p1">SMU second-year students from the Radiography healthcare profession reflect on
-       their experiences about the impact of Interprofessional Education and Collaborative Practice (IPECP), 
-       which aims to strengthen interprofessional education and collaboration amongst students through increased 
-       networking.The students share what they've learnt and reflect on it</p>
-   </p>
-    <p class="art1" style="text-align: center;">Seema RM "You pose we expose"<br>
-   Kgololo K "When collaborating communication is key to ensure best paitient outcome"<br>
-   Radzima l "intercollaborate with other health proffesional to assist communities"
-  </p>
-  </div>
 
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-      <h2>School of Medicine Update</h2>
-      <h5>May 14 , 2024</h5>
-      <div class="HART1" style="height:600px;"></div>
-      
-      <p>The SOM council held a meeting with class representatives on April 24, 2024, to address various issues within the school. Updates on these issues include:<br>
+    <section class="som-header">
+        <div class="back-nav"><a href="index.html" class="btn-back">← Back to Portal</a></div>
+        <span class="category-tag">Clinical Excellence Hub</span>
+        <h1>School of Medicine</h1>
+    </section>
 
-        - Dosimeters for Brad 2, 3, and 4 students to detect radiation exposure are being procured, and students will not have to pay for them.<br>
-        - Reduction in clinical sites for Brad students is being addressed through collaboration with private sectors and acquisition of new sites.<br>
-        - Issues with Biophysics in Brad 4 are being mitigated through meetings with the Department.<br>
-        - Medicine 1, 2, and 3 issues, including releasing of Nursing staff and doctors, DH situation, formalin concentration, and fees, are being addressed and escalated to University council and DHET for funding.<br>
-        - Deadlines for resolving outstanding issues are set for May 13, 2024.<br>
-        
-        The SOM council is engaging with departments to address departmental issues and ensure student concerns are heard and resolved.</p>
+    <section class="content-section">
+        <div class="section-title"><h2>SOM Navigator</h2></div>
+        <div class="som-grid">
+            
+            <div class="som-card" onclick="toggleModal('deptModal')">
+                <h3>Specialized Departments</h3>
+                <p>Access the diverse clinical and surgical departments that power our medical curriculum.</p>
+                <span class="btn-action">View Departments →</span>
+            </div>
+
+            <div class="som-card" onclick="toggleModal('leadModal')">
+                <h3>Student Leadership</h3>
+                <p>Connect with the School Chairperson for representation and clinical support.</p>
+                <span class="btn-action">View Chairperson →</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="leadership-box">
+        <div class="dean-profile">
+            <h4>Prof. Thanyani Mariba</h4>
+            <p style="color: #888; font-size: 13px;">Executive Dean: School of Medicine</p>
+        </div>
+    </section>
+
+    <div id="deptModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal('deptModal')">&times;</span>
+            <h3 style="color:#002244; border-bottom: 2px solid #4db8ff; display: inline-block;">Medical Departments</h3>
+            <ul class="dept-list">
+                <li>Internal Medicine</li>
+                <li>Diagnostic Radiology</li>
+                <li>General Surgery</li>
+                <li>Paediatrics & Child Health</li>
+                <li>Obstetrics & Gynaecology</li>
+                <li>Anaesthesiology</li>
+                <li>Orthopaedics</li>
+                <li>Psychiatry</li>
+                <li>Family Medicine</li>
+                <li>Emergency Medicine</li>
+            </ul>
+        </div>
     </div>
-    <div class="card">
-      <h2>Passing of Jason Debeila</h2>
-      <h5> May 11, 2024</h5>
-      <div class="HART2" style="height: 800px;" ></div>
-      <p>It is with great sadness to announce the passing of Jason Debeila, a final-year MBCHB student, on May 11, 2024, 
-        at Dr George Mukhari Academic hospital after a long-term illness. He will be remembered for his strong and positive spirit.
-         The School of Medicine extends condolences to the Debeila Family, his classmates, and the SMU student community. Memorial 
-         service and funeral arrangements will be communicated soon. May he rest in peace.
-         "The Lord is close to the brokenhearted and saves those who are crushed in spirit" (Psalm 34:18).</p>
-      </div>
-    
- 
-    
-  
+
+    <div id="leadModal" class="modal-overlay">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close-modal" onclick="toggleModal('leadModal')">&times;</span>
+            <div style="font-size: 40px; margin-bottom: 10px;">🩺</div>
+            <h3 style="color:#111; margin-bottom: 5px;">Vumbhoni Mahlaule</h3>
+            <p style="color:#4db8ff; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
+                Chairperson: School of Medicine
+            </p>
+            <p style="margin-top: 20px; color: #666; font-size: 14px; line-height: 1.6;">
+                Committed to advocating for medical students and ensuring a smooth transition from classroom to clinical rotation.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal.style.display === "block") {
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "block";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === "modal-overlay") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
-
- 
